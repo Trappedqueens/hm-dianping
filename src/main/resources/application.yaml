@@ -5,12 +5,12 @@ spring:
     name: hmdp
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/hmdp?useSSL=false&serverTimezone=UTC&&allowPublicKeyRetrieval=true
-    username: root
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/hmdp?useSSL=false&serverTimezone=UTC&&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
   redis:
-    host: 192.168.23.128
-    port: 6379
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
     password: ${REDIS_PASSWORD}
     lettuce:
       pool:
@@ -25,7 +25,7 @@ mybatis-plus:
 
 hmdp:
   alioss:
-    endpoint: oss-cn-hangzhou.aliyuncs.com
+    endpoint: ${ALIOSS_ENDPOINT}
     access-key-id: ${ALIOSS_ACCESS_KEY_ID}
     access-key-secret: ${ALIOSS_ACCESS_KEY_SECRET}
     bucket-name: ${ALIOSS_BUCKET_NAME}
