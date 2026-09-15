@@ -7,11 +7,11 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/hmdp?useSSL=false&serverTimezone=UTC&&allowPublicKeyRetrieval=true
     username: root
-    password: 123456
+    password: ${DB_PASSWORD}
   redis:
     host: 192.168.23.128
     port: 6379
-    password: 123321
+    password: ${REDIS_PASSWORD}
     lettuce:
       pool:
         max-active: 10
@@ -26,9 +26,9 @@ mybatis-plus:
 hmdp:
   alioss:
     endpoint: oss-cn-hangzhou.aliyuncs.com
-    access-key-id: LTAI5tGwcLxg7EeFeDK17vBz
-    access-key-secret: Ti8MVxCqsetKfrZ9bv6iGSJhtL8Q3r
-    bucket-name: wan123456
+    access-key-id: ${ALIOSS_ACCESS_KEY_ID}
+    access-key-secret: ${ALIOSS_ACCESS_KEY_SECRET}
+    bucket-name: ${ALIOSS_BUCKET_NAME}
 logging:
   level:
     com.hmdp: debug
